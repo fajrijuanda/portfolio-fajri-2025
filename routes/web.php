@@ -11,12 +11,17 @@ Route::get('/', function () {
 
 Route::get('/project/{project:slug}', function (Project $project) {
     $project->load('images');
-    
+
     // Get related projects (same category)
     $relatedProjects = Project::where('category', $project->category)
         ->where('id', '!=', $project->id)
         ->take(3)
         ->get();
-    
+
     return view('projects.show', compact('project', 'relatedProjects'));
 })->name('project.show');
+
+Route::get('/resume', function () {
+    $featuredProjects = Project::where('featured', true)->take(3)->get();
+    return view('resume', compact('featuredProjects'));
+})->name('resume');
