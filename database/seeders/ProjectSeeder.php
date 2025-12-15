@@ -61,9 +61,9 @@ class ProjectSeeder extends Seeder
                 'slug' => 'besra-geonet',
                 'title' => 'BESRA GeoNet',
                 'category' => 'Web App',
-                'tags' => ['Next.js', 'Django REST', 'Billing'],
-                'description' => 'Sistem manajemen pelanggan dan billing untuk penyedia layanan internet (ISP/RT RW Net).',
-                'content' => "## Tentang BESRA GeoNet\n\nSistem manajemen pelanggan dan billing untuk ISP/RT RW Net.\n\n### Fitur Utama\n- Customer management\n- Billing automation\n- Network monitoring\n- Invoice generation",
+                'tags' => ['Next.js', 'WebGIS', 'Asset Mgmt'],
+                'description' => 'Sistem Informasi Geografis (GIS) untuk manajemen aset jaringan fiber optic PT Besra Utama Sinaran.',
+                'content' => "## Tentang BESRA GeoNet\n\nSistem Informasi Geografis (GIS) berbasis web untuk manajemen infrastruktur jaringan fiber optic **PT Besra Utama Sinaran**.\n\n### Fitur Utama\n- Fiber optic route mapping\n- ODP/ODC asset management\n- Network coverage analysis\n- Project construction tracking",
                 'featured' => false,
                 'order' => 5,
             ],
@@ -137,7 +137,6 @@ class ProjectSeeder extends Seeder
                 'featured' => false,
                 'order' => 11,
             ],
-
             // --- INTERNSHIP & COMMUNITY ---
             [
                 'slug' => 'cbi-portal-supplier',
@@ -173,7 +172,10 @@ class ProjectSeeder extends Seeder
         ];
 
         foreach ($projects as $projectData) {
-            $project = Project::create($projectData);
+            $project = Project::updateOrCreate(
+                ['slug' => $projectData['slug']],
+                $projectData
+            );
 
             // Auto-seed images from project folder if exists
             $folderPath = public_path('images/projects/' . $projectData['slug']);
@@ -198,12 +200,13 @@ class ProjectSeeder extends Seeder
                         $thumbnailSet = true;
                     }
 
-                    ProjectImage::create([
-                        'project_id' => $project->id,
-                        'image_path' => $imagePath,
-                        'caption' => $projectData['title'] . ' - Screenshot ' . $order,
-                        'order' => $order,
-                    ]);
+                    ProjectImage::firstOrCreate(
+                        ['project_id' => $project->id, 'image_path' => $imagePath],
+                        [
+                            'caption' => $projectData['title'] . ' - Screenshot ' . $order,
+                            'order' => $order,
+                        ]
+                    );
                     $order++;
                 }
             }
