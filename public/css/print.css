@@ -1,22 +1,23 @@
-/* Print Styles */
+/* Print Styles - Minimal & Clean */
 @media print {
-    /* Reset & Page Setup */
+    /* Page Setup */
     @page {
         size: A4;
-        margin: 1cm;
+        margin: 0;
     }
 
     html, body {
-        background: #0f172a !important; /* Force dark background */
+        width: 210mm;
+        height: 296mm; /* Exact A4 Height */
+        margin: 0;
+        padding: 0;
+        background: white !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
-
-        width: 210mm;
-        min-height: 297mm;
-        overflow: visible !important;
+        overflow: hidden !important; /* Prevent page 2 */
     }
 
-    /* Hide UI Elements */
+    /* Hide Global UI Elements */
     nav,
     footer,
     #cursorDot,
@@ -25,65 +26,17 @@
     [aria-label="Scroll to top"],
     .fixed,
     .bg-grid-pattern,
-    button[onclick="window.print()"],
-    a[href*="#projects"] /* Hide "View Full Portfolio" link */
+    .absolute /* Hide absolute positioned decorative blobs */
     {
         display: none !important;
     }
 
-    /* Force visibility and reset styles for content */
-    section {
-        padding: 0 !important;
-        margin-bottom: 2rem !important;
-        page-break-inside: avoid;
-    }
-
-    .glass, .glass-card {
-        background: rgba(15, 17, 42, 0.8) !important; /* Darker, less transparent for print */
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        box-shadow: none !important;
-    }
-
-    /* Text Colors - Ensure readability on dark bg */
-    h1, h2, h3, h4, p, span, li {
-        color: #e2e8f0 !important; /* Light text */
-    }
-
-    .text-primary {
-        color: #f97316 !important; /* Orange */
-    }
-
-    /* Layout Adjustments */
-    .max-w-4xl {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    .grid {
-        display: block !important; /* Stack columns on print or keep grid if fits */
-    }
-
-    .md\:col-span-2, .md\:grid-cols-3 {
-        display: block !important;
+    /* Ensure the print container spans full width */
+    .print\:block {
         width: 100% !important;
-    }
-
-    /* Sidebar items should follow main content */
-    .space-y-8 {
-        margin-top: 2rem !important;
-        page-break-before: auto;
-    }
-
-    /* Links */
-    a {
-        text-decoration: none !important;
-        color: inherit !important;
-    }
-
-    /* Remove gradient texts fallback */
-    .gradient-text {
-        background: none !important;
-        -webkit-text-fill-color: #f97316 !important; /* Fallback to solid color */
+        height: 100% !important;
+        max-width: none !important;
+        display: block !important;
+        overflow: hidden !important;
     }
 }
