@@ -14,27 +14,8 @@
         }
     }">
         <!-- Navigation -->
-        <nav class="fixed top-0 left-0 right-0 z-50 glass">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-16">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent-purple flex items-center justify-center">
-                            <i data-lucide="code-2" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <span class="font-semibold text-lg hidden sm:block">Portfolio</span>
-                    </div>
-                    <div class="flex items-center space-x-6">
-                        <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-200">Projects</a>
-                        <a href="#rate-card" class="text-gray-300 hover:text-white transition-colors duration-200">Rate Card</a>
-                        <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200">About</a>
-                        <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a>
-                        <a href="https://github.com/fajrijuanda" target="_blank" class="glass-card p-2 rounded-lg hover:border-primary/50 group">
-                            <i data-lucide="github" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <!-- Navigation -->
+        @include('partials.navbar')
 
         <!-- Hero Section -->
         <section class="min-h-screen flex items-center justify-center px-4 pt-20 relative">
@@ -102,14 +83,12 @@
         <section id="projects" class="py-20 px-4">
             <div class="max-w-7xl mx-auto">
                 <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <h2 class="gsap-section text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                        <span class="gradient-text">Featured Projects</span>
-                    </h2>
-                    <p class="gsap-section text-gray-400 text-lg max-w-2xl mx-auto">
+                <x-section-header align="center">
+                    <x-gradient-text>Featured Projects</x-gradient-text>
+                    <x-slot:subtitle>
                         A showcase of my best work across different domains and technologies
-                    </p>
-                </div>
+                    </x-slot:subtitle>
+                </x-section-header>
 
                 <!-- Filter Buttons -->
                 <div class="gsap-section flex flex-wrap justify-center gap-3 mb-12">
@@ -218,19 +197,17 @@
 
             <div class="max-w-7xl mx-auto relative z-10">
                 <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <h2 class="gsap-section text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                        <span class="gradient-text">Rate Card</span> Services
-                    </h2>
-                    <p class="gsap-section text-gray-400 text-lg max-w-2xl mx-auto">
+                <x-section-header align="center">
+                    <x-gradient-text>Rate Card</x-gradient-text> Services
+                    <x-slot:subtitle>
                         Transparent pricing for professional development services tailored to your needs
-                    </p>
-                </div>
+                    </x-slot:subtitle>
+                </x-section-header>
 
                 <!-- Pricing Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Basic: Landing Page -->
-                    <div class="glass-card rounded-2xl p-6 relative group hover:border-primary/50 transition-all duration-300 hover:-translate-y-2">
+                    <x-glass-card class="rounded-2xl p-6 relative group hover:border-primary/50 transition-all duration-300 hover:-translate-y-2">
                         <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                             <i data-lucide="layout" class="w-16 h-16 text-primary"></i>
                         </div>
@@ -268,13 +245,13 @@
                             </li>
                         </ul>
 
-                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20Landing%20Page" target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-primary/20 hover:text-primary transition-all font-medium border border-white/10">
+                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20*Landing%20Page*.%0A%0ANama%3A%20%0AInstansi%2FBisnis%3A%20%0AKebutuhan%20Website%3A%20%0A%0AMohon%20infonya%20untuk%20diskusi%20lebih%20lanjut." target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-primary/20 hover:text-primary transition-all font-medium border border-white/10">
                             Consult Now
                         </a>
-                    </div>
+                    </x-glass-card>
 
                     <!-- New: Company Profile (CMS) -->
-                    <div class="glass-card rounded-2xl p-6 relative group hover:border-blue-400/50 transition-all duration-300 hover:-translate-y-2">
+                    <x-glass-card class="rounded-2xl p-6 relative group hover:border-blue-400/50 transition-all duration-300 hover:-translate-y-2">
                         <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                             <i data-lucide="panels-top-left" class="w-16 h-16 text-blue-400"></i>
                         </div>
@@ -312,13 +289,13 @@
                             </li>
                         </ul>
 
-                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20Company%20Profile%20dengan%20CMS" target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-blue-400/20 hover:text-blue-400 transition-all font-medium border border-white/10">
+                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20*Company%20Profile%20(CMS)*.%0A%0ANama%3A%20%0ANama%20Perusahaan%3A%20%0ABidang%20Usaha%3A%20%0A%0AMohon%20infonya%20untuk%20diskusi%20lebih%20lanjut." target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-blue-400/20 hover:text-blue-400 transition-all font-medium border border-white/10">
                             Consult Now
                         </a>
-                    </div>
+                    </x-glass-card>
 
                     <!-- Medium: Web App -->
-                    <div class="glass-card rounded-2xl p-6 relative group hover:border-accent-purple/50 transition-all duration-300 hover:-translate-y-2">
+                    <x-glass-card class="rounded-2xl p-6 relative group hover:border-accent-purple/50 transition-all duration-300 hover:-translate-y-2">
                         <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                             <i data-lucide="database" class="w-16 h-16 text-accent-purple"></i>
                         </div>
@@ -356,13 +333,13 @@
                             </li>
                         </ul>
 
-                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20Web%20Application" target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-accent-purple/20 hover:text-accent-purple transition-all font-medium border border-white/10">
+                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20*Web%20Application*.%0A%0ANama%3A%20%0AInstansi%3A%20%0AJenis%20Sistem%20(misal%3A%20CRM%2FDashboard)%3A%20%0AGambaran%20Fitur%20Utama%3A%20%0A%0AMohon%20infonya%20untuk%20jadwal%20meeting%20diskusi." target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-accent-purple/20 hover:text-accent-purple transition-all font-medium border border-white/10">
                             Consult Now
                         </a>
-                    </div>
+                    </x-glass-card>
 
                     <!-- New: Mobile Application -->
-                    <div class="glass-card rounded-2xl p-6 relative group hover:border-emerald-400/50 transition-all duration-300 hover:-translate-y-2">
+                    <x-glass-card class="rounded-2xl p-6 relative group hover:border-emerald-400/50 transition-all duration-300 hover:-translate-y-2">
                         <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                             <i data-lucide="smartphone" class="w-16 h-16 text-emerald-400"></i>
                         </div>
@@ -400,13 +377,13 @@
                             </li>
                         </ul>
 
-                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20jasa%20pembuatan%20Mobile%20Application" target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-emerald-400/20 hover:text-emerald-400 transition-all font-medium border border-white/10">
+                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20*Mobile%20Application*.%0A%0ANama%3A%20%0AIde%20Aplikasi%3A%20%0APlatform%20(Android%2FiOS%2FBoth)%3A%20%0A%0AMohon%20infonya%20untuk%20diskusi%20teknis." target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-emerald-400/20 hover:text-emerald-400 transition-all font-medium border border-white/10">
                             Consult Now
                         </a>
-                    </div>
+                    </x-glass-card>
 
                     <!-- Advanced: IoT & Systems -->
-                    <div class="glass-card rounded-2xl p-6 relative group hover:border-accent-cyan/50 transition-all duration-300 hover:-translate-y-2">
+                    <x-glass-card class="rounded-2xl p-6 relative group hover:border-accent-cyan/50 transition-all duration-300 hover:-translate-y-2">
                         <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                             <i data-lucide="cpu" class="w-16 h-16 text-accent-cyan"></i>
                         </div>
@@ -444,13 +421,13 @@
                             </li>
                         </ul>
 
-                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20solusi%20IoT%20Integration" target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-accent-cyan/20 hover:text-accent-cyan transition-all font-medium border border-white/10">
+                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20solusi%20*IoT%20%26%20Integrated%20Systems*.%0A%0ANama%3A%20%0AInstansi%3A%20%0AJenis%20Project%20(Monitoring%2FControl)%3A%20%0AHardware%20(jika%20ada)%3A%20%0A%0AMohon%20infonya%20untuk%20diskusi%20teknis." target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-accent-cyan/20 hover:text-accent-cyan transition-all font-medium border border-white/10">
                             Consult Now
                         </a>
-                    </div>
+                    </x-glass-card>
 
                     <!-- Enterprise: SaaS / Cloud -->
-                    <div class="glass-card rounded-2xl p-6 relative group hover:border-accent-pink/50 transition-all duration-300 hover:-translate-y-2">
+                    <x-glass-card class="rounded-2xl p-6 relative group hover:border-accent-pink/50 transition-all duration-300 hover:-translate-y-2">
                         <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                             <i data-lucide="cloud-lightning" class="w-16 h-16 text-accent-pink"></i>
                         </div>
@@ -488,10 +465,10 @@
                             </li>
                         </ul>
 
-                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20pembuatan%20SaaS%20Platform" target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-accent-pink/20 hover:text-accent-pink transition-all font-medium border border-white/10">
+                        <a href="https://wa.me/6285217861296?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20*SaaS%20%26%20Cloud%20Architecture*.%0A%0ANama%3A%20%0AInstansi%2FStartup%3A%20%0AGambaran%20Platform%3A%20%0ATarget%20Skala%20User%3A%20%0A%0AMohon%20infonya%20untuk%20diskusi%20arsitektur." target="_blank" class="w-full block text-center py-3 rounded-xl bg-white/5 hover:bg-accent-pink/20 hover:text-accent-pink transition-all font-medium border border-white/10">
                             Consult Now
                         </a>
-                    </div>
+                    </x-glass-card>
                 </div>
             </div>
         </section>
@@ -499,11 +476,11 @@
         <!-- About Section -->
         <section id="about" class="py-20 px-4">
             <div class="max-w-5xl mx-auto">
-                <div class="glass-card rounded-3xl p-8 md:p-12">
+                <x-glass-card class="rounded-3xl p-8 md:p-12">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <h2 class="text-3xl sm:text-4xl font-bold mb-6">
-                                About <span class="gradient-text">Me</span>
+                                About <x-gradient-text>Me</x-gradient-text>
                             </h2>
                             <p class="text-gray-400 mb-6 leading-relaxed">
                                 I'm a passionate Full Stack Developer with expertise in building scalable cloud solutions,
@@ -540,36 +517,36 @@
 
                         <div class="relative">
                             <!-- Skills Grid -->
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 @foreach([
                                     ['icon' => 'cloud', 'title' => 'Cloud & DevOps', 'desc' => 'GCP, Docker, CI/CD'],
                                     ['icon' => 'globe', 'title' => 'Web Development', 'desc' => 'Laravel, Next.js, Nuxt'],
                                     ['icon' => 'smartphone', 'title' => 'Mobile Apps', 'desc' => 'Flutter, Ionic'],
                                     ['icon' => 'cpu', 'title' => 'IoT & Systems', 'desc' => 'MQTT, Sensors, Realtime']
                                 ] as $skill)
-                                    <div class="glass-card p-4 rounded-xl hover:border-primary/30 transition-all">
+                                    <x-glass-card class="p-4 rounded-xl hover:border-primary/30 transition-all">
                                         <i data-lucide="{{ $skill['icon'] }}" class="w-8 h-8 text-primary mb-3"></i>
                                         <h4 class="font-semibold mb-1">{{ $skill['title'] }}</h4>
                                         <p class="text-gray-500 text-sm">{{ $skill['desc'] }}</p>
-                                    </div>
+                                    </x-glass-card>
                                 @endforeach
                             </div>
                         </div>
                     </div>
-                </div>
+                </x-glass-card>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="py-20 px-4">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-                    Let's <span class="gradient-text">Connect</span>
-                </h2>
-                <p class="text-gray-400 text-lg mb-12">
+            <x-section-header align="center">
+                Let's <x-gradient-text>Connect</x-gradient-text>
+                <x-slot:subtitle>
                     Have a project in mind? Let's build something amazing together.
-                </p>
+                </x-slot:subtitle>
+            </x-section-header>
 
+            <div class="max-w-3xl mx-auto text-center">
                 <div class="flex flex-wrap justify-center gap-4">
                     <a href="mailto:fajriyanuar1@gmail.com" class="glass-card px-8 py-4 rounded-xl font-semibold hover:border-primary/50 flex items-center gap-3 hover:scale-105 transition-transform">
                         <i data-lucide="mail" class="w-5 h-5 text-primary"></i>
@@ -588,89 +565,10 @@
         </section>
 
         <!-- Footer -->
-        <footer class="py-8 px-4 border-t border-white/5">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent-purple flex items-center justify-center">
-                        <i data-lucide="code-2" class="w-4 h-4 text-white"></i>
-                    </div>
-                    <span class="text-gray-400">© 2025 Fajri Yanuar Shiddiq Juanda</span>
-                </div>
-                <div class="text-gray-500 text-sm">
-                    Built with <span class="text-red-500">❤</span> using Laravel & Tailwind CSS
-                </div>
-            </div>
-        </footer>
+        @include('partials.footer')
     </div>
 
-    <!-- GSAP Animations -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Hero animations
-            const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-            heroTl
-                .from('.gsap-hero-avatar', {
-                    duration: 1,
-                    y: 50,
-                    opacity: 0,
-                    scale: 0.8
-                })
-                .from('.gsap-hero-title', {
-                    duration: 0.8,
-                    y: 30,
-                    opacity: 0
-                }, '-=0.5')
-                .from('.gsap-hero-subtitle', {
-                    duration: 0.8,
-                    y: 30,
-                    opacity: 0
-                }, '-=0.5')
-                .from('.gsap-hero-cta', {
-                    duration: 0.8,
-                    y: 30,
-                    opacity: 0
-                }, '-=0.5')
-                .from('.gsap-hero-stack span', {
-                    duration: 0.5,
-                    y: 20,
-                    opacity: 0,
-                    stagger: 0.05
-                }, '-=0.3');
-
-            // Section animations on scroll
-            gsap.utils.toArray('.gsap-section').forEach(section => {
-                gsap.from(section, {
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top 80%',
-                        toggleActions: 'play none none reverse'
-                    },
-                    y: 30,
-                    opacity: 0,
-                    duration: 0.8
-                });
-            });
-
-            // Project cards animation
-            gsap.utils.toArray('.project-card').forEach((card, i) => {
-                gsap.from(card, {
-                    scrollTrigger: {
-                        trigger: card,
-                        start: 'top 85%',
-                        toggleActions: 'play none none reverse'
-                    },
-                    y: 50,
-                    opacity: 0,
-                    duration: 0.6,
-                    delay: i * 0.1
-                });
-            });
-
-            // Reinitialize Lucide icons after Alpine updates
-            document.addEventListener('alpine:initialized', () => {
-                lucide.createIcons();
-            });
-        });
-    </script>
+    @push('scripts')
+        <script src="{{ asset('js/welcome.js') }}"></script>
+    @endpush
 @endsection

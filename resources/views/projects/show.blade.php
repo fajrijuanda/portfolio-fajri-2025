@@ -4,28 +4,9 @@
 
 @section('content')
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-2">
-                    <a href="{{ route('home') }}" class="flex items-center space-x-2">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent-purple flex items-center justify-center">
-                            <i data-lucide="code-2" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <span class="font-semibold text-lg hidden sm:block">Portfolio</span>
-                    </a>
-                </div>
-                <div class="flex items-center space-x-6">
-                    <a href="{{ route('home') }}#projects" class="text-gray-300 hover:text-white transition-colors duration-200">Projects</a>
-                    <a href="{{ route('home') }}#about" class="text-gray-300 hover:text-white transition-colors duration-200">About</a>
-                    <a href="{{ route('home') }}#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a>
-                    <a href="https://github.com/fajrijuanda" target="_blank" class="glass-card p-2 rounded-lg hover:border-primary/50 group">
-                        <i data-lucide="github" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('partials.navbar')
+
+    <!-- Hero Section -->
 
     <!-- Hero Section -->
     <section class="pt-24 pb-12 px-4">
@@ -53,7 +34,7 @@
             </div>
 
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-                <span class="gradient-text">{{ $project->title }}</span>
+                <x-gradient-text>{{ $project->title }}</x-gradient-text>
             </h1>
 
             <p class="text-xl text-gray-400 mb-8 max-w-3xl">
@@ -154,7 +135,7 @@
     }" @keydown.arrow-right.window="next()" @keydown.arrow-left.window="prev()">
         <div class="max-w-5xl mx-auto">
             <!-- Main Preview Image -->
-            <div class="glass-card rounded-3xl overflow-hidden relative group">
+            <x-glass-card class="rounded-3xl overflow-hidden relative group p-0 border-0">
                 @if($defaultImage || $galleryImages->count() > 0)
                     <img
                         :src="currentImage"
@@ -197,7 +178,7 @@
                         <div class="text-9xl font-bold text-white/10 relative z-10">{{ substr($project->title, 0, 1) }}</div>
                     </div>
                 @endif
-            </div>
+            </x-glass-card>
 
             <!-- Thumbnail Gallery Strip -->
             @if($galleryImages->count() > 1)
@@ -234,7 +215,7 @@
     <!-- Project Content -->
     <section class="py-12 px-4">
         <div class="max-w-5xl mx-auto">
-            <div class="glass-card rounded-3xl p-8 md:p-12">
+            <x-glass-card class="rounded-3xl p-8 md:p-12">
                 <div class="prose prose-invert prose-lg max-w-none">
                     <h2>Tentang {{ $project->title }}</h2>
                     <p>{{ $project->description }}</p>
@@ -251,7 +232,7 @@
                     <h3>Kategori</h3>
                     <p>Proyek ini termasuk dalam kategori <strong>{{ $project->category }}</strong>.</p>
                 </div>
-            </div>
+            </x-glass-card>
         </div>
     </section>
 
@@ -260,25 +241,27 @@
     <section class="py-12 px-4">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-2xl font-bold mb-8">
-                Related <span class="gradient-text">Projects</span>
+                Related <x-gradient-text>Projects</x-gradient-text>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 @foreach($relatedProjects as $related)
-                    <a href="{{ route('project.show', $related->slug) }}" class="glass-card rounded-2xl overflow-hidden group gradient-border cursor-pointer block">
-                        <div class="relative h-40 overflow-hidden">
-                            @if($related->thumbnail)
-                                <img src="{{ asset($related->thumbnail) }}" alt="{{ $related->title }}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                            @else
-                                <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent-purple/20"></div>
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="text-5xl font-bold text-white/10">{{ substr($related->title, 0, 1) }}</div>
-                                </div>
-                            @endif
-                        </div>
-                        <div class="p-5">
-                            <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{{ $related->title }}</h3>
-                            <p class="text-gray-400 text-sm line-clamp-2">{{ $related->description }}</p>
-                        </div>
+                    <a href="{{ route('project.show', $related->slug) }}">
+                        <x-glass-card class="rounded-2xl overflow-hidden group gradient-border cursor-pointer block p-0 border-0 h-full">
+                            <div class="relative h-40 overflow-hidden">
+                                @if($related->thumbnail)
+                                    <img src="{{ asset($related->thumbnail) }}" alt="{{ $related->title }}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                                @else
+                                    <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent-purple/20"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="text-5xl font-bold text-white/10">{{ substr($related->title, 0, 1) }}</div>
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{{ $related->title }}</h3>
+                                <p class="text-gray-400 text-sm line-clamp-2">{{ $related->description }}</p>
+                            </div>
+                        </x-glass-card>
                     </a>
                 @endforeach
             </div>
@@ -287,17 +270,5 @@
     @endif
 
     <!-- Footer -->
-    <footer class="py-8 px-4 border-t border-white/5">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent-purple flex items-center justify-center">
-                    <i data-lucide="code-2" class="w-4 h-4 text-white"></i>
-                </div>
-                <span class="text-gray-400">© 2025 Fajri Yanuar Shiddiq Juanda</span>
-            </div>
-            <div class="text-gray-500 text-sm">
-                Built with <span class="text-red-500">❤</span> using Laravel & Tailwind CSS
-            </div>
-        </div>
-    </footer>
+    @include('partials.footer')
 @endsection
