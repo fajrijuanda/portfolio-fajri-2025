@@ -42,32 +42,17 @@
                 <!-- Main Content (Experience & Projects) -->
                 <div class="md:col-span-2 space-y-12">
 
-                    <!-- Experience Section -->
+                    <!-- Professional Summary (Description) -->
                     <section class="gsap-section">
                         <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                            <div class="p-2 rounded-lg bg-primary/20 text-primary"><i data-lucide="briefcase" class="w-6 h-6"></i></div>
-                            Work <x-gradient-text>Experience</x-gradient-text>
+                            <div class="p-2 rounded-lg bg-emerald-500/20 text-emerald-500"><i data-lucide="user" class="w-6 h-6"></i></div>
+                            About <x-gradient-text>Me</x-gradient-text>
                         </h2>
-
-                        <div class="relative pl-8 border-l-2 border-white/10 space-y-10">
-                            <!-- PT Century Battery -->
-                            <div class="relative">
-                                <span class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-primary border-4 border-slate-950"></span>
-                                <x-glass-card class="p-6 rounded-2xl hover:border-primary/30 transition-all group">
-                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                                        <h3 class="text-xl font-bold group-hover:text-primary transition-colors">PT. Century Battery Indonesia</h3>
-                                        <span class="text-sm font-menu text-primary bg-primary/10 px-3 py-1 rounded-full whitespace-nowrap mt-2 sm:mt-0 inline-block text-center w-fit">Feb 2025 - Aug 2025</span>
-                                    </div>
-                                    <p class="text-lg text-gray-300 font-medium mb-4">Internship (Magang) - IT Support & Development</p>
-                                    <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside marker:text-primary">
-                                        <li>Maintained and optimized internal IT infrastructure, ensuring 99% uptime during operational hours.</li>
-                                        <li>Collaborated with the development team to test and debug internal web applications.</li>
-                                        <li>Provided technical support for hardware and software issues across departments.</li>
-                                        <li>Assisted in the documentation of IT assets and network configurations.</li>
-                                    </ul>
-                                </x-glass-card>
-                            </div>
-                        </div>
+                        <x-glass-card class="p-6 rounded-2xl border-emerald-500/20">
+                            <p class="text-gray-300 leading-relaxed text-lg">
+                                Dedicated and ambitious Informatics Engineering student at <span class="text-white font-medium">Universitas Buana Perjuangan Karawang</span> with a strong foundation in Full Stack Development. Experienced in building modern web applications using <span class="text-primary font-medium">Laravel</span>, <span class="text-primary font-medium">Vue.js</span>, and React ecosystems. Passionate about solving complex problems through clean code, innovative solutions, and continuous learning. Proven ability to work in team environments and manage IT infrastructure during professional internship.
+                            </p>
+                        </x-glass-card>
                     </section>
 
                     <!-- Education Section -->
@@ -101,6 +86,52 @@
                                     </div>
                                     <p class="text-lg text-gray-300 font-medium mb-2">Mathematics and Natural Sciences (MIPA)</p>
                                     <p class="text-gray-400 text-sm">Active in Computer Science Club and various extracurricular activities.</p>
+                                </x-glass-card>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Experience Section -->
+                    <section class="gsap-section">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <div class="p-2 rounded-lg bg-primary/20 text-primary"><i data-lucide="briefcase" class="w-6 h-6"></i></div>
+                            Work <x-gradient-text>Experience</x-gradient-text>
+                        </h2>
+
+                        <div class="relative pl-8 border-l-2 border-white/10 space-y-10">
+                            <!-- PT Century Battery -->
+                            <div class="relative">
+                                <span class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-primary border-4 border-slate-950"></span>
+                                <x-glass-card class="p-6 rounded-2xl hover:border-primary/30 transition-all group">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                                        <h3 class="text-xl font-bold group-hover:text-primary transition-colors">PT. Century Battery Indonesia</h3>
+                                        <span class="text-sm font-menu text-primary bg-primary/10 px-3 py-1 rounded-full whitespace-nowrap mt-2 sm:mt-0 inline-block text-center w-fit">Feb 2025 - Aug 2025</span>
+                                    </div>
+                                    <p class="text-lg text-gray-300 font-medium mb-4">Internship (Magang) - IT Support & Development</p>
+                                    <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside marker:text-primary">
+                                        <li>Maintained and optimized internal IT infrastructure, ensuring 99% uptime during operational hours.</li>
+                                        <li>Collaborated with the development team to test and debug internal web applications.</li>
+                                        <li>Provided technical support for hardware and software issues across departments.</li>
+                                        <li>Assisted in the documentation of IT assets and network configurations.</li>
+                                    </ul>
+                                </x-glass-card>
+                            </div>
+
+                            <!-- MariBelajar (MSIB) -->
+                            <div class="relative">
+                                <span class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-blue-500 border-4 border-slate-950"></span>
+                                <x-glass-card class="p-6 rounded-2xl hover:border-blue-500/30 transition-all group">
+                                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                                        <h3 class="text-xl font-bold group-hover:text-blue-500 transition-colors">MariBelajar (MSIB Batch 7)</h3>
+                                        <span class="text-sm font-menu text-blue-500 bg-blue-500/10 px-3 py-1 rounded-full whitespace-nowrap mt-2 sm:mt-0 inline-block text-center w-fit">Sep 2024 - Dec 2024</span>
+                                    </div>
+                                    <p class="text-lg text-gray-300 font-medium mb-4">Studi Independen - Data Analyst & AI Engineer</p>
+                                    <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside marker:text-blue-500">
+                                        <li>Developing <strong>Echolytics</strong>, an AI-powered data analytics platform.</li>
+                                        <li>Mastered Python, SQL, and Machine Learning concepts for data processing and prediction.</li>
+                                        <li>Implemented data visualization techniques to derive actionable insights.</li>
+                                        <li>Collaborated in an agile team environment to deliver the capstone project.</li>
+                                    </ul>
                                 </x-glass-card>
                             </div>
                         </div>
@@ -218,10 +249,10 @@
                             <div>
                                 <div class="flex justify-between text-sm mb-1">
                                     <span class="font-medium">Korean</span>
-                                    <span class="text-gray-400">Proficient</span>
+                                    <span class="text-gray-400">Intermediate</span>
                                 </div>
                                 <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-pink-400 to-pink-600 w-[85%] rounded-full"></div>
+                                    <div class="h-full bg-gradient-to-r from-pink-400 to-pink-600 w-[60%] rounded-full"></div>
                                 </div>
                             </div>
                             <div>
