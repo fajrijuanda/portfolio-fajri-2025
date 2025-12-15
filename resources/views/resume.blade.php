@@ -213,7 +213,7 @@
                                     <i data-lucide="wrench" class="w-4 h-4 text-accent-cyan"></i> Tools & Others
                                 </h4>
                                 <div class="flex flex-wrap gap-2">
-                                    @foreach(['Git', 'Docker', 'Filament', 'Figma'] as $skill)
+                                    @foreach(['Git', 'Docker', 'Filament', 'Figma', 'GCP'] as $skill)
                                         <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 hover:border-accent-cyan/50 transition-colors cursor-default">{{ $skill }}</span>
                                     @endforeach
                                 </div>
