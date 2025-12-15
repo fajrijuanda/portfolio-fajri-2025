@@ -97,6 +97,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/print.css') }}" media="print">
 </head>
 <body class="bg-slate-950 text-white font-sans antialiased overflow-x-hidden min-h-screen">
     <!-- Loading Screen -->

@@ -99,12 +99,12 @@
                         </h2>
 
                         <div class="relative pl-8 border-l-2 border-white/10 space-y-10">
-                            <!-- PT Century Battery -->
+                            <!-- PT Century Batteries -->
                             <div class="relative">
                                 <span class="absolute -left-[39px] top-1 w-5 h-5 rounded-full bg-primary border-4 border-slate-950"></span>
                                 <x-glass-card class="p-6 rounded-2xl hover:border-primary/30 transition-all group">
                                     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                                        <h3 class="text-xl font-bold group-hover:text-primary transition-colors">PT. Century Battery Indonesia</h3>
+                                        <h3 class="text-xl font-bold group-hover:text-primary transition-colors">PT. Century Batteries Indonesia</h3>
                                         <span class="text-sm font-menu text-primary bg-primary/10 px-3 py-1 rounded-full whitespace-nowrap mt-2 sm:mt-0 inline-block text-center w-fit">Feb 2025 - Aug 2025</span>
                                     </div>
                                     <p class="text-lg text-gray-300 font-medium mb-4">Internship (Magang) - IT Support & Development</p>
@@ -286,14 +286,14 @@
 
                     <!-- Download CV -->
                      <section class="gsap-section">
-                         <a href="#" class="group w-full block p-4 rounded-xl border border-dashed border-white/20 hover:border-primary/50 text-center transition-all bg-white/5 hover:bg-white/10">
-                             <div class="flex flex-col items-center gap-2">
-                                 <div class="p-3 rounded-full bg-white/5 group-hover:scale-110 transition-transform">
-                                     <i data-lucide="file-down" class="w-6 h-6 text-gray-400 group-hover:text-primary transition-colors"></i>
-                                 </div>
-                                 <span class="text-sm font-medium text-gray-300 group-hover:text-white">Download CV (PDF)</span>
-                             </div>
-                         </a>
+                          <button onclick="window.print()" class="group w-full block p-4 rounded-xl border border-dashed border-white/20 hover:border-primary/50 text-center transition-all bg-white/5 hover:bg-white/10 cursor-pointer">
+                              <div class="flex flex-col items-center gap-2">
+                                  <div class="p-3 rounded-full bg-white/5 group-hover:scale-110 transition-transform">
+                                      <i data-lucide="printer" class="w-6 h-6 text-gray-400 group-hover:text-primary transition-colors"></i>
+                                  </div>
+                                  <span class="text-sm font-medium text-gray-300 group-hover:text-white">Save as PDF / Print</span>
+                              </div>
+                          </button>
                      </section>
                 </div>
             </div>
