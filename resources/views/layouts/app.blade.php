@@ -135,6 +135,24 @@
         @yield('content')
     </div>
 
+    <!-- Scroll to Top Button -->
+    <a href="#"
+       x-data="{ show: false }"
+       @scroll.window="show = (window.pageYOffset > 500)"
+       @click.prevent="window.scrollTo({top: 0, behavior: 'smooth'})"
+       x-show="show"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 translate-y-10"
+       x-transition:enter-end="opacity-100 translate-y-0"
+       x-transition:leave="transition ease-in duration-300"
+       x-transition:leave-start="opacity-100 translate-y-0"
+       x-transition:leave-end="opacity-0 translate-y-10"
+       x-cloak
+       class="fixed bottom-8 right-8 z-50 p-3 rounded-full glass-card border border-white/10 text-primary hover:scale-110 hover:bg-primary/20 transition-all shadow-lg shadow-primary/20 backdrop-blur-md"
+       aria-label="Scroll to top">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </a>
+
     <!-- Main JS -->
     <script src="{{ asset('js/main.js') }}"></script>
     @stack('scripts')
