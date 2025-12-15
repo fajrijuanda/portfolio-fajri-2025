@@ -10,12 +10,8 @@
         <div class="max-w-4xl mx-auto">
             <!-- Header Profile -->
             <x-glass-card class="rounded-3xl p-8 mb-12 flex flex-col md:flex-row items-center gap-8 border-primary/20">
-                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white/10 shadow-xl shrink-0">
-                    <!-- Placeholder/Fallback for Profile Image if not available -->
-                   <div class="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center text-3xl font-bold text-white">
-                        FY
-                   </div>
-                   <!-- Ideally use a real image if available: <img src="{{ asset('images/profile.jpg') }}" alt="Fajri Yanuar" class="w-full h-full object-cover"> -->
+                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white/10 shadow-xl shrink-0 relative group">
+                    <img src="{{ asset('images/profile.png') }}" alt="Fajri Yanuar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
                 <div class="text-center md:text-left">
                     <h1 class="text-4xl font-bold mb-2">Fajri Yanuar Shiddiq Juanda</h1>
@@ -166,7 +162,7 @@
                                     <i data-lucide="code" class="w-4 h-4 text-primary"></i> Languages
                                 </h4>
                                 <div class="flex flex-wrap gap-2">
-                                    @foreach(['PHP', 'JavaScript', 'Dart', 'Go', 'Python', 'SQL'] as $skill)
+                                    @foreach(['PHP', 'JavaScript', 'TypeScript', 'Dart', 'Go', 'Python', 'SQL'] as $skill)
                                         <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 hover:border-primary/50 transition-colors cursor-default">{{ $skill }}</span>
                                     @endforeach
                                 </div>
@@ -176,7 +172,7 @@
                                     <i data-lucide="layers" class="w-4 h-4 text-accent-purple"></i> Frameworks
                                 </h4>
                                 <div class="flex flex-wrap gap-2">
-                                    @foreach(['Laravel', 'Vue.js', 'Alpine.js', 'Flutter', 'Tailwind CSS'] as $skill)
+                                    @foreach(['Laravel', 'Vue.js', 'React.js', 'Next.js', 'Nuxt.js', 'Django', 'Flutter', 'Ionic', 'Tailwind CSS'] as $skill)
                                         <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 hover:border-accent-purple/50 transition-colors cursor-default">{{ $skill }}</span>
                                     @endforeach
                                 </div>
@@ -186,7 +182,7 @@
                                     <i data-lucide="wrench" class="w-4 h-4 text-accent-cyan"></i> Tools & Others
                                 </h4>
                                 <div class="flex flex-wrap gap-2">
-                                    @foreach(['Git', 'Docker', 'Filament', 'Figma', 'Linux'] as $skill)
+                                    @foreach(['Git', 'Docker', 'Filament', 'Figma'] as $skill)
                                         <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 hover:border-accent-cyan/50 transition-colors cursor-default">{{ $skill }}</span>
                                     @endforeach
                                 </div>
