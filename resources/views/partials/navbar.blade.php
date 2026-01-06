@@ -15,7 +15,7 @@
             <div class="hidden md:flex items-center space-x-6">
                 <!-- Intelligent linking using route helper -->
                 <a href="{{ route('home') }}#projects" class="text-gray-300 hover:text-white transition-colors duration-200">Projects</a>
-                <a href="{{ route('home') }}#rate-card" class="text-gray-300 hover:text-white transition-colors duration-200">Rate Card</a>
+                {{-- <a href="{{ route('home') }}#rate-card" class="text-gray-300 hover:text-white transition-colors duration-200">Rate Card</a> --}}
                 <a href="{{ route('home') }}#about" class="text-gray-300 hover:text-white transition-colors duration-200">About</a>
                 <a href="{{ route('resume') }}" class="text-gray-300 hover:text-white transition-colors duration-200 {{ request()->routeIs('resume') ? 'text-primary font-medium' : '' }}">Resume</a>
                 <a href="{{ route('home') }}#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a>
@@ -48,7 +48,7 @@
     >
         <div class="px-4 pt-2 pb-6 space-y-2">
             <a href="{{ route('home') }}#projects" @click="mobileMenuOpen = false" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Projects</a>
-            <a href="{{ route('home') }}#rate-card" @click="mobileMenuOpen = false" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Rate Card</a>
+            {{-- <a href="{{ route('home') }}#rate-card" @click="mobileMenuOpen = false" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Rate Card</a> --}}
             <a href="{{ route('home') }}#about" @click="mobileMenuOpen = false" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors">About</a>
             <a href="{{ route('resume') }}" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors {{ request()->routeIs('resume') ? 'text-primary bg-white/5' : '' }}">Resume</a>
             <a href="{{ route('home') }}#contact" @click="mobileMenuOpen = false" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors">Contact</a>

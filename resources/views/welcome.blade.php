@@ -187,7 +187,7 @@
             </div>
         </section>
 
-        <!-- Rate Card Section -->
+        {{-- Rate Card Section - HIDDEN
         <section id="rate-card" class="py-20 px-4 relative">
             <!-- Background Elements -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -472,6 +472,7 @@
                 </div>
             </div>
         </section>
+        --}}
 
         <!-- About Section -->
         <section id="about" class="py-20 px-4">
